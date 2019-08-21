@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W5D3 - SQL from our Apps</title>
+</head>
+
+<body>
+  <h1>Task</h1>
+
+  <a href="/">Back</a>
+
+  <form action="/tasks/<%= task.id %>" method="POST">
+    <div>
+      <label for="completed">Completed:</label>
+      <input type="checkbox" name="completed" id="completed" <%= task.completed ? "checked" : "" %> />
+    </div>
+    
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" value="<%= task.title %>" />
+    </div>
+
+    <input type="submit" value="Update Task" />
+  </form>
+
+  <form action="/tasks/<%= task.id %>/delete" method="POST">
+    <input type="submit" value="Delete Task" />
+  </form>
+</body>
+</html>
